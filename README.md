@@ -13,19 +13,23 @@ script(src="https://gnjo.github.io/quest.js")
 script(src="https://gnjo.github.io/underscore.js")
 script(src="https://gnjo.github.io/quest.util.js")
 script(src="https://gnjo.github.io/quest.core.js")
+script(src="https://gnjo.github.io/quest.cmds.js")
 ```
 ### develop
 ```
 underscore.js
-quest.core.js
- q.core.run.js
- q.core.lex.js
- q.core.red.js
 quest.util.js
  q.util.runner.js
  q.util.xxx.js
  q.util.numable.js
  q.util.addr.js
+quest.core.js
+ q.core.run.js
+ q.core.lex.js
+ q.core.red.js
+quest.cmds.js
+ q.cmds.1st.js
+ q.cmds.2nd.js
 ```
 
 ### usage
