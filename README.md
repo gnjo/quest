@@ -5,6 +5,7 @@ dragon quest macro for monospaced art game
 ```
 //pug
 script(src="https://gnjo.github.io/quest.js")
+script(src="https://gnjo.github.io/user.js") //your self
 ```
 
 ### group
