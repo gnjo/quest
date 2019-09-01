@@ -1,8 +1,12 @@
+/*histry
+v1.0 make
+v1.1 bug fix object unmapping
+*/
 ;(function(root){
 
  ;
  function entry(obj){
-  let o={}
+  let o=obj||{}
   o.__run={};
   o.addon=function(seek,name,fn){   
    o[name]=fn
@@ -22,7 +26,7 @@
     _.sortBy(ary,(a)=>a.seek).map(d=>d.fn.apply(o,arg))
    return o;
   }
-  return _.extend({},o,obj)
+  return o//_.extend({},o,obj)
  }
  ;
  root.runner=entry
