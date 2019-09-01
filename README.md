@@ -21,16 +21,13 @@ script(src="https://gnjo.github.io/quest.cmds.js")
 underscore.js
 quest.util.js
  q.util.runner.js
- q.util.xxx.js
- q.util.numable.js
- q.util.addr.js
+ q.util...
 quest.core.js
  q.core.run.js
- q.core.lex.js
- q.core.red.js
+ q.core...
 quest.cmds.js
  q.cmds.1st.js
- q.cmds.2nd.js
+ q.cmds...
 ```
 
 ### usage
