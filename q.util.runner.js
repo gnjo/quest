@@ -5,8 +5,8 @@ v1.1 bug fix object unmapping
 ;(function(root){
 
  ;
- function entry(obj){
-  let o=obj||{}
+ function entry(o/*bj*/){
+  //let o=obj||{}
   o.__run={};
   o.addon=function(seek,name,fn){   
    o[name]=fn
