@@ -1,5 +1,5 @@
 ### quest
-dragon quest macro
+dragon quest macro for monospaced art game
 
 ### package
 ```
