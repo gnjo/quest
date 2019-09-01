@@ -45,7 +45,7 @@ DAT //:%00...%ZZ to DAT
 2nd command
 ```
 ```
-the 3rd user self.
+3rd user self
 
 ### example
 1st command
@@ -56,4 +56,11 @@ the 3rd user self.
 ```
 other case
 ```
+```
+### command definition
+```
+let f=function(cmd,ch,a,b,c){
+}
+q.def('XYZ',f,'XYZ a b c //:XYZ is xyz order.')
+//XYZ 0 1 2
 ```
