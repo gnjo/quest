@@ -18,7 +18,7 @@ script(src="https://gnjo.github.io/quest.core.js")
 ```
 underscore.js
 quest.core.js
- q.core.main.js
+ q.core.run.js
  q.core.lex.js
  q.core.red.js
 quest.util.js
