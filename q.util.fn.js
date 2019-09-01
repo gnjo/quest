@@ -1,5 +1,6 @@
 //document element utility
-;(function(fn){
+;(function(root){
+ let fn=root.fn||{}
  ;
  function i3(d,doc=document){
   if(typeof d !=='string') return d
@@ -50,8 +51,10 @@
   return canvas.toDataURL("image/png") //output
  }
  ;
- const imax=Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER%10)
- fn.safetick=(d)=>{return (d===imax)?1:(++d)}
- fn.get4=(d)=>d.charAt(3) //MTH ch tar add jmp 
+ fn.imax=Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER%10)
+ fn.safetick=(d)=>{return (d===fn.imax)?1:(++d)}
+ fn.get4=(d)=>d.charAt(3) //MTH ch tar add jmp
+ 
+ root.fn=fn
 })(this);
 
