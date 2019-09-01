@@ -4,17 +4,17 @@ dragon quest macro for monospaced art game
 ### package
 ```
 //pug
-script(src="https://gnjo.github.io/quest.js")
-script(src="https://gnjo.github.io/user.js") //your self
+script(src="https://gnjo.github.io/quest/quest.js")
+script(src="https://gnjo.github.io/quest/user.js") //your self
 ```
 
 ### group
 ```
 //pug
-script(src="https://gnjo.github.io/underscore.js")
-script(src="https://gnjo.github.io/quest.util.js")
-script(src="https://gnjo.github.io/quest.core.js")
-script(src="https://gnjo.github.io/quest.cmds.js")
+script(src="https://gnjo.github.io/quest/underscore.js")
+script(src="https://gnjo.github.io/quest/quest.util.js")
+script(src="https://gnjo.github.io/quest/quest.core.js")
+script(src="https://gnjo.github.io/quest/quest.cmds.js")
 ```
 ### develop
 ```
