@@ -1,6 +1,7 @@
 /*histry
 v1.0 make
-v1.1 bug fix object unmapping
+v1.1 bugfix object unmapping
+v1.2 bugfix seek null is not run
 */
 ;(function(root){
 
