@@ -1,17 +1,23 @@
 ### quest
 dragon quest macro
 
-### quick
+### package
+```
+//pug
+script(src="https://gnjo.github.io/quest.js")
+```
+
+### group
 ```
 //pug
 script(src="https://gnjo.github.io/underscore.js")
 script(src="https://gnjo.github.io/quest.util.js")
-script(src="https://gnjo.github.io/quest.js")
+script(src="https://gnjo.github.io/quest.core.js")
 ```
-### files
+### develop
 ```
 underscore.js
-quest.js
+quest.core.js
  q.core.main.js
  q.core.lex.js
  q.core.red.js
