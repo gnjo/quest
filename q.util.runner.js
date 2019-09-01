@@ -10,7 +10,7 @@ v1.1 bug fix object unmapping
   o.__run={};
   o.addon=function(seek,name,fn){   
    o[name]=fn
-   o.__run[name]=seek;
+   if(seek) o.__run[name]=seek;
    return o;
   }
   o.test=function(){
