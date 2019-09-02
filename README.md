@@ -70,3 +70,15 @@ q.def('XYZ',f,'XYZ a b c //:XYZ is xyz order.')
 
 ### ascii keycheck 
 https://codepen.io/gnjo/pen/vYBJvJM
+
+### debug
+quest.pipe is all cmdline data inputed.
+```
+let snif={set: function(o,p,v){if(p==='pipe'){caller(v)} o[p]=v;return true}};
+function caller(v){
+//cmdline
+}
+quest =new Proxy(quest,snif)
+quest.pipe=cmdline; //
+
+```
