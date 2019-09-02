@@ -67,3 +67,6 @@ let f=function(cmd,ch,a,b,c){
 q.def('XYZ',f,'XYZ a b c //:XYZ is xyz order.')
 //XYZ 0 1 2
 ```
+
+### ascii keycheck 
+https://codepen.io/gnjo/pen/vYBJvJM
