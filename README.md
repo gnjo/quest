@@ -1,14 +1,16 @@
 ###
 ~~~
-                                  
- ####  #    # ######  ####  ##### 
-#    # #    # #      #        #   
-#    # #    # #####   ####    #   
-#  # # #    # #           #   #   
-#   #  #    # #      #    #   #   
- ### #  ####  ######  ####    #   
-
-//art by http://patorjk.com/software/taag/#p=display&f=Old%20Banner&t=quest 
+                                
+                            O   
+                           oOo  
+.oOoO' O   o  .oOo. .oOo    o   
+O   o  o   O  OooO' `Ooo.   O   
+o   O  O   o  O         O   o   
+`OoOo  `OoO'o `OoO' `OoO'   `oO 
+    O                           
+    `o                          
+    
+art by http://patorjk.com/software/taag
 ~~~
 ### quest
 dragon quest macro for monospaced art game
