@@ -8,7 +8,8 @@ left side memo, can NOT save.
 ~~~~
 ctrl+enter : run
 ctrl+space : layer toggle
-ctrl+esc : abort
+esc : abort
+ctrl+delete : console clear
 ~~~~
 
 ### game on key
