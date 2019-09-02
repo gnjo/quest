@@ -1,10 +1,10 @@
 /*loop history
 v1.0 make loo into lop fop
 v1.1 with end
+v1.2 block and frame rate set the default.
 */
 
 ;(function(q){
-
 
  let end=function(){
   if(!q.md)return;
