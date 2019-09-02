@@ -1,8 +1,13 @@
+/*history
+v1.0 make
+v1.1 bugfix 001 issue. if def case, 001 is string.
+*/
 ;(function(root){
 
  let re={}
  re.numunit=/^([-+]?(?:\d*[\.]\d+|\d+))/  //tail not end
  re.num=/^([-+]?(?:\d*[\.]\d+|\d+))$/
+ re.headzero=/^0[0-9]/ //bugfix
  re.falsy=/^(false|0|no|n|null|undefined|NaN)$/i
  function modulo(obj,num){
   let v=Math.abs(parseInt(obj)%parseInt(num))
@@ -30,6 +35,8 @@
  } 
  function def(obj){
   if(!_.isString(obj))return obj;
+  ///^0[0-9]/.test('001') //string like a color code
+  if(re.headzero.test(obj))return obj; //string ex.color code
   if(re.num.test(obj))return parseFloat(obj);//right number
   return obj;//string
  }
