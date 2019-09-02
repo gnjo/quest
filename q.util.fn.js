@@ -1,4 +1,8 @@
 //document element utility
+/*history
+v1.0 make
+v1.1 wraptrim wraptrim2
+*/
 ;(function(root){
  let fn=root.fn||{}
  ;
@@ -54,6 +58,19 @@
  fn.imax=Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER%10)
  fn.safetick=(d)=>{return (d===fn.imax)?1:(++d)}
  fn.get4=(d)=>d.charAt(3) //MTH ch tar add jmp
+ 
+ fn.trimwrap=(str)=>{
+  let wraptrim=/(^\/\*)|(^\{\{\{)|(^\[\[\[)/ // /* ?
+  ,x=str.trim()
+  if(wraptrim.test(x)){
+   let ary=x.split('\n')
+   ary.pop();ary.shift()
+   return ary.join('\n')
+  }
+  //silent pattern
+  return str;
+ }
+ fn.trimwrap2=(str)=>{return str.slice(3,-3) /*line wrap*/} 
  
  root.fn=fn
 })(this);
