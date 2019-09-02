@@ -43,7 +43,6 @@ quest.cmds.js
 MTH //:$00...$ZZ $$$ to MTH
 LAY //:X00...XZZ XXX to LAY
 MAP //:A00...AZZ to MAP
-DAT //:%00...%ZZ to DAT
 ```
 2nd command
 ```
