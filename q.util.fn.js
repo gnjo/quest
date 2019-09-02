@@ -43,9 +43,10 @@ v1.1 wraptrim wraptrim2
  /**/
  fn.nulltoX00=(d)=>{return (d)?d:'X00'}
  ;
- fn.p1x1=function p1x1(c,w,h){
+ fn.p1x1=function p1x1(_c,w,h){
   //ex) red or #f00 or #f005 or #ff0000 or #00000000 or transparent
   let canvas=/*document.createElement*/fn.ce('canvas'),ctx=canvas.getContext('2d')
+  let c=/^#/.test(_c)?c:'#'+_c
   ;
   canvas.width=w||1
   canvas.height=h||1
