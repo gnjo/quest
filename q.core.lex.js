@@ -1,6 +1,7 @@
 /*
 v1.0 make
 v1.1 remove chunk
+v1.2 with mac
 */
 ;(function(q){
  let re={}
@@ -81,4 +82,35 @@ v1.1 remove chunk
  //console.log(lex(macro))
  q.addon(void 0,'lex',lex);
 
+})(quest);
+
+;(function(q){
+ let mac=function(str,fps,lps){
+  let d=q.lex(str),ad=addr(d.address).set(d.jumps[d.address])
+  ;
+  //console.log(d,q.md.macros)
+  if(!q.md.macros){
+   //most first
+   q.md.macros={}
+   q.md.n=0 //now line
+   q.md.jumps={}
+   q.md.jumpstack=[]   
+  }
+  q.md.macros[ad.get('@')]=d.macro
+  q.md.jumps=_.extend({},q.md.jumps,d.jumps)
+  q.md.n=q.md.jumps[d.address]||0
+  q.md.nowmacro=ad.get('@')
+  ;
+  q.sd['$$$']=ad.get()
+  q.sd['$00']=q.sd['$$$']
+  //console.log(data)
+  let re={}
+  re.cmdlinesplit=/((\[\[\[(?:.*?)\]\]\])|(\{\{\{(?:.*?)\}\}\})|(>>>(?:.*?)>>>))|([^ ]+)/g //add the set back >>> cmd a b >>>
+
+  //let x=d.macro.map(d=>d.match(re.cmdlinesplit)||[])
+  //console.log(x)
+  return q
+ }
+ q.addon(300,'mac',mac)
+ 
 })(quest);
