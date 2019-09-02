@@ -4,6 +4,7 @@ v1.1 test url-> https://codepen.io/gnjo/pen/BaBdqQR
 v1.2 hb: head bar
 v1.3 change place https://gnjo.github.io/quest/q.util.xxx.js
 v1.4 method delete head x. xrole->role xset->set
+v1.5 bugfix
 */
 ;(function(root){
  let fn={}
@@ -105,7 +106,7 @@ v1.4 method delete head x. xrole->role xset->set
    return xset(query,_w,_h,_fs);
   }
   ;
-  o.xset(alive,w,h,fs)
+  o.set(alive,w,h,fs) //xset->set
   return o;
  }
  root.xxx=entry;
