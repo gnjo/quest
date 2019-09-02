@@ -51,10 +51,12 @@ v1.1 with end
   //if(q.md.lf)clearInterval(q.md.lf)
 
   let safetick=fn.safetick
-  q.md.fps=fps||q.md.fps
-  q.md.lps=lps||q.md.lps
+  q.md.fps=fps||q.md.fps||20
+  q.md.lps=lps||q.md.lps||100
   q.md.f=0 //fps loop counter
   q.md.l=0 //lps loop counter
+  q.md.readblock=0 //ready block
+  q.md.keyblock=0  //ready block
   ;
   q.md.cf=setInterval(()=>{ 
    q.md.f=safetick(q.md.f)
