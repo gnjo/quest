@@ -70,6 +70,9 @@ q.def('XYZ',f,'XYZ a b c //:XYZ is xyz order.')
 ### ascii keycheck 
 https://codepen.io/gnjo/pen/vYBJvJM
 
+### package app
+https://codepen.io/gnjo/pen/mYbxdY
+
 ### debug
 quest.pipe is all cmdline data inputed.
 ```
