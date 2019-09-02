@@ -1,4 +1,5 @@
- //red
+;(function(q){
+//red
  let red=function(_str){
   if(!_str)return;
   //mdm.md.readblock=1;
@@ -41,3 +42,5 @@
   //mdm.md.readblock=0;
  } 
  q.addon(void 0,'red',red)
+
+})(quest); 
