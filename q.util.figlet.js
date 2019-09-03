@@ -1152,7 +1152,7 @@ Figlet.write=	function(str, _font, _fn) {
  });
 }
 
- this.figlet=(str)=>{
+ root.figlet=(str)=>{
 let font='roman2',height=Figlet.fonts[font].height
   var chars = [],
       result = "";
