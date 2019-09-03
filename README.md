@@ -1,5 +1,5 @@
 ###
-<pre style="line-height:1.0">
+<div style="line-height:1.0!important;white-space:pre-wrap;">
                                               .   
                                             .o8   
  .ooooo oo oooo  oooo   .ooooo.   .oooo.o .o888oo 
@@ -11,7 +11,7 @@ d88' `888  `888  `888  d88' `88b d88(  "8   888
       8P'                                         
       "                                           
 art font roman
-</pre>
+</div>
 ### quest
 dragon quest macro for monospaced art game
 
