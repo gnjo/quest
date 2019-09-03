@@ -1,0 +1,14 @@
+<script>
+function receiveMessage(event) {
+ let el=document.createElement('div')
+ el.textContent=event.data
+ document.body.appendChild(el)
+  event.source.postMessage(
+    "hi there yourself!  the secret response " +
+    "is: rheeeeet!",
+    event.origin
+  );
+}
+
+window.addEventListener("message", receiveMessage, false);
+</script>
