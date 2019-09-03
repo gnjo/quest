@@ -1,5 +1,10 @@
-/*need font
+/*
 v1.0 figlet migrate
+v1.1 basefont roman2
+v1.2 figlet(str) //preload the font. not call back
+v1.3 bugfix
+usage:
+document.body.textContent=figlet('quest')
 */
 
 /**
