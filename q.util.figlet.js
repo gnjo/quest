@@ -1165,7 +1165,7 @@ let font='roman2',height=Figlet.fonts[font].height
    }
    result += "\n";
   }
-  return result);
+  return result;
 
  }
 })(this);
