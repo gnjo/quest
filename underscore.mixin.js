@@ -1,12 +1,14 @@
+;(function(_){
 /*history
 v0.1 isExist
 v0.2 randomSeed
+v0.3 otehr file issue
 */
 
 _.mixin({
  isExist : function(obj) {
   if(obj===0||obj==='0')return true;
-  return _.isEmpty(obj)
+  return (obj)?true:false
  }
 })
 /*usage
@@ -26,6 +28,7 @@ _.mixin({
  }
  ,random=(a,b)=>{
   seed=xorshift32(seed)
+  //console.log(a,seed%a)
   if(_.isExist(a)&&_.isExist(b))return seed%Math.abs(b-a)+a
   if(_.isExist(a))return seed%a
   return seed
@@ -39,5 +42,4 @@ document.body.textContent=random(0,5)
 */
 ;
 
-_.mixin(_)
-
+})(_); 
