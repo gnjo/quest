@@ -39,3 +39,5 @@ document.body.textContent=random(0,5)
 */
 ;
 
+_.mixin(_)
+
