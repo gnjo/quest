@@ -1,16 +1,16 @@
 ###
 ~~~
-                                
-                            O   
-                           oOo  
-.oOoO' O   o  .oOo. .oOo    o   
-O   o  o   O  OooO' `Ooo.   O   
-o   O  O   o  O         O   o   
-`OoOo  `OoO'o `OoO' `OoO'   `oO 
-    O                           
-    `o                          
-    
-art font pebbles
+                                              .   
+                                            .o8   
+ .ooooo oo oooo  oooo   .ooooo.   .oooo.o .o888oo 
+d88' `888  `888  `888  d88' `88b d88(  "8   888   
+888   888   888   888  888ooo888 `"Y88b.    888   
+888   888   888   888  888    .o o.  )88b   888 . 
+`V8bod888   `V88V"V8P' `Y8bod8P' 8""888P'   "888" 
+      888.                                        
+      8P'                                         
+      "                                           
+art font roman
 ~~~
 ### quest
 dragon quest macro for monospaced art game
