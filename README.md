@@ -32,6 +32,7 @@ script(src="https://gnjo.github.io/quest/quest.cmds.js")
 ### develop
 ```
 underscore.js
+ underscore.mixin.js
 quest.util.js
  q.util.runner.js
  q.util...
