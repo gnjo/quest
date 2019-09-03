@@ -2,6 +2,7 @@
 v1.0 make
 v1.1 random logic change xorshift
 v1.2 spceial cut
+v1.3 need underscore and mixin
 */
 
 /*interface
@@ -37,32 +38,6 @@ B,3,BU7,BLA
  fn.setary=(ary,key)=>{
   return (!key)?Array.from(new Set(ary)):ary.filter((a,b,c)=>(c.findIndex((d)=>(a[key]===d[key]))=== b))
  }
-/*history
-v1.0 crc
-v1.1 logic change xorshift
-*/
-;(function(root){
-
- function xorshift32(seed){
-  let y=seed
-  y = y ^ (y << 13)
-  y = y ^ (y >> 17)
-  y = y ^ (y << 15)
-  y = y >>> 0
-  return y
- }
-
- function entry(_seed){
-  let seed=_seed||999
-  ,rand=(a,b)=>{
-   seed=xorshift32(seed)
-   return ( (a!=null)&&(b!=null) )?(seed%Math.abs(b-a)+a):(a!=null)?seed%a:seed
-  }
-  return rand
- }
- root.rand=entry
-})(this);
- 
  
  function roomer(_seed,_w,_h,str){
   let chspace=str.charAt(0)
@@ -70,14 +45,10 @@ v1.1 logic change xorshift
   let chtunnel=str.charAt(2)
   ;
   let seed=_seed||1345
-  //let mt=new MersenneTwister(seed);
-  //mt.rand=mt.nextInt
-  let mt={rand:rand(seed)}//new MersenneTwister(seed);
-  //mt.rand=mt.nextInt
-  //console.log(mt.rand(3))
+  let random=_.randomSeed(seed)
   ;
   let fo=()=>{
-   let v=mt.rand(3)
+   let v=random(3)
    return (v===2)?-1:v
   }
   let w=_w||15
@@ -87,11 +58,11 @@ v1.1 logic change xorshift
   //let rmin=7,rmax=11
   let wmin=parseInt(w/2),wmax=w-2
   let hmin=parseInt(h/2),hmax=h-2
-  let rw=mt.rand(wmin,wmax)//mt.rand(rmin,rmax)
-  let rh=mt.rand(hmin,hmax)//mt.rand(rmin,rmax)
+  let rw=random(wmin,wmax)//mt.rand(rmin,rmax)
+  let rh=random(hmin,hmax)//mt.rand(rmin,rmax)
   //console.log(rw,wmin,wmax)
-  let ow=mt.rand(w-rw)
-  let oh=mt.rand(h-rh)
+  let ow=random(w-rw)
+  let oh=random(h-rh)
   let gw=~~(rw/2) +fo()
   let gh=~~(rh/2) +fo()
   //udlr
@@ -107,11 +78,7 @@ v1.1 logic change xorshift
  function walker(_seed){
   //
   let seed=_seed||1345
-//  let mt=new MersenneTwister(seed);
-//  mt.rand=mt.nextInt
-  let mt={rand:rand(seed)}//new MersenneTwister(seed);
-  //mt.rand=mt.nextInt
-  
+  let random=_.randomSeed(seed)  
   ;
   
   let walkrule={}
@@ -119,12 +86,12 @@ v1.1 logic change xorshift
   //
 
   let roommax=12
-  let walknum=()=>mt.rand(roommax*2)+roommax
+  let walknum=()=>random(roommax*2)+roommax
   let walkmax=walknum()
-  let wk=fn.d2h(mt.rand(roommax)) //fake stairs
+  let wk=fn.d2h(random(roommax)) //fake stairs
   let path=fn.range(walkmax).map((d,i)=>{
    let rs=walkrule[wk].slice(2)
-   let ret=rs[mt.rand(16)%rs.length]
+   let ret=rs[random(16)%rs.length]
    wk=ret.charAt(2)
    return ret;
   })
@@ -196,9 +163,9 @@ v1.1 logic change xorshift
   let chtunnel=str.charAt(2)
   ;
   let seed=_seed||1345
-  let mt={rand:rand(seed)}//new MersenneTwister(seed);
-  //mt.rand=mt.nextInt
+  let random=_.randomSeed(seed)
   ;
+  //console.log(random(0,100))
   let path=walker(seed)
   //fn.q('.draw').textContent=viewer(path)
 
@@ -210,7 +177,7 @@ v1.1 logic change xorshift
   let w=parseInt( (bw/*-6*/)/4 ),h=parseInt( (bh/*-5*/)/3)
   //console.log(bw,bh,w,h)
   let isroom=(num)=>~tunnel.join('').indexOf(fn.d2h(num))
-  let rooms=fn.range(12).map(d=>roomer(mt.rand(),w,h,str))
+  let rooms=fn.range(12).map(d=>roomer(random(),w,h,str))
   //let w=15,h=13
   let fs=(d,i)=>(i>0&&i%bw===0)?'\n'+d:d  
   let view=fn.range(bw*bh).map(d=>chwall)
