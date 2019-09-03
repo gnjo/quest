@@ -1,9 +1,11 @@
-
+/*history
+v1.0 make
+v1.0 random logic change xorshift
+*/
 
 /*interface
 
-dung(seed,w,h,"・■上下")
-
+dung(seed,"・　＃上下").view //floor void tunnel upstair downstair
 */
 
 ;(function(root){
