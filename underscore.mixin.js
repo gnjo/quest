@@ -1,4 +1,3 @@
-;(function(_){
 /*history
 v0.1 isExist
 v0.2 randomSeed
@@ -41,5 +40,3 @@ let random=_.randomSeed(999)
 document.body.textContent=random(0,5)
 */
 ;
-
-})(_); 
