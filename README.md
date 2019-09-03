@@ -10,7 +10,7 @@ o   O  O   o  O         O   o
     O                           
     `o                          
     
-art by http://patorjk.com/software/taag
+art font pebbles
 ~~~
 ### quest
 dragon quest macro for monospaced art game
