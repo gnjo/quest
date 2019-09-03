@@ -1,4 +1,3 @@
-###
 ~~~                                              .   
                                             .o8   
  .ooooo oo oooo  oooo   .ooooo.   .oooo.o .o888oo 
