@@ -1152,6 +1152,21 @@ Figlet.write=	function(str, _font, _fn) {
  });
 }
 
+ this.figlet=(str)=>{
+let font='roman2',height=Figlet.fonts[font].height
+  var chars = [],
+      result = "";
+  for (var i = 0, len = str.length; i < len; i++) {
+   chars[i] = Figlet.parseChar(str.charCodeAt(i), font);
+  }
+  for (i = 0, height = chars[0].length; i < height; i++) {
+   for (var j = 0; j < len; j++) {
+    result += chars[j][i];
+   }
+   result += "\n";
+  }
+  return result);
 
+ }
 })(this);
 
