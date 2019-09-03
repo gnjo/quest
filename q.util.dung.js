@@ -1,6 +1,7 @@
 /*history
 v1.0 make
-v1.0 random logic change xorshift
+v1.1 random logic change xorshift
+v1.2 spceial cut
 */
 
 /*interface
@@ -59,8 +60,7 @@ v1.1 logic change xorshift
   }
   return rand
  }
- //root.rand=entry
- root.Rand=entry //special
+ root.rand=entry
 })(this);
  
  
@@ -72,7 +72,7 @@ v1.1 logic change xorshift
   let seed=_seed||1345
   //let mt=new MersenneTwister(seed);
   //mt.rand=mt.nextInt
-  let mt={rand:Rand(seed)}//new MersenneTwister(seed);
+  let mt={rand:rand(seed)}//new MersenneTwister(seed);
   //mt.rand=mt.nextInt
   //console.log(mt.rand(3))
   ;
@@ -109,7 +109,7 @@ v1.1 logic change xorshift
   let seed=_seed||1345
 //  let mt=new MersenneTwister(seed);
 //  mt.rand=mt.nextInt
-  let mt={rand:Rand(seed)}//new MersenneTwister(seed);
+  let mt={rand:rand(seed)}//new MersenneTwister(seed);
   //mt.rand=mt.nextInt
   
   ;
@@ -196,7 +196,7 @@ v1.1 logic change xorshift
   let chtunnel=str.charAt(2)
   ;
   let seed=_seed||1345
-  let mt={rand:Rand(seed)}//new MersenneTwister(seed);
+  let mt={rand:rand(seed)}//new MersenneTwister(seed);
   //mt.rand=mt.nextInt
   ;
   let path=walker(seed)
