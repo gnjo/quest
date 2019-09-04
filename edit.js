@@ -42,6 +42,7 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
   //lexer.lex(frame,ed)
   //editableLex(ed)
   //option.dt=70
+  ed.dataset.headline=ed.textContent.split('\n').slice(0,1).pop()  
   ea(ed,(ev)=>{
    ev.target.dataset.headline=ev.target.textContent.split('\n').slice(0,1).pop()
   },{dt:200})
