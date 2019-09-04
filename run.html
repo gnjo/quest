@@ -2,10 +2,33 @@
 <html>
  <head></head>
 <body style="background-color:#a1d1f">
-<div class="abort" onclick="quest.end('abort')" style="position:fixed;z-index:10;top:1rem;right:1rem" >*</div>
-<script class="runner">
+<script type="text/plain" data-loader>
+script(src="https://gnjo.github.io/quest/underscore.js?v=1.83")
+script(src="https://gnjo.github.io/quest/q.util.runner.js?v=1.3")
+script(src="https://gnjo.github.io/quest/q.util.addr.js")
+script(src="https://gnjo.github.io/quest/q.util.dung.js")
+script(src="https://gnjo.github.io/quest/q.util.fn.js?v=1.1")
+script(src="https://gnjo.github.io/quest/q.util.mapview.js")
+//script(src="https://gnjo.github.io/quest/q.util.rand.js")
+script(src="https://gnjo.github.io/quest/q.util.numable.js?v=1.1")
+script(src="https://gnjo.github.io/quest/q.util.xxx.js?v=1.5")
+script(src="https://gnjo.github.io/quest/q.core.run.js?v=1.3")
+script(src="https://gnjo.github.io/quest/q.core.lex.js?v=1.1")
+script(src="https://gnjo.github.io/quest/q.core.red.js?v=1.0")
+script(src="https://gnjo.github.io/quest/q.core.loo.js?v=1.2")
+//script(src="https://dummy/q.core.loo.js?v=1.2")
+</script> 
+<script type="text/plain" data-loaded>
 ;(function(q){ 
 let fn={}
+fn.a2=function(me,p){p.appendChild(me);return me}
+fn.i3=(d)=>{
+ if(typeof d !=='string') return d
+ var el=document.createElement('table'); el.innerHTML=d.trim();
+ var me=el.childNodes[0]
+ el=void 0;
+ return me
+}
  fn.gp=(key,url)=>{
   let re=new RegExp('^'+key+'=')
   return url.split('?').pop().split('&').filter(d=>re.test(d)).join('').split('=').pop()
@@ -22,8 +45,42 @@ return (decodeflg)?d( du(str) ):eu( e(str) )
 }
  let d=fn.gp('d',location.href)
  //console.log(d)
- if(d) q.run( fn.base64url(d,1) )
+ 
+ if(d){
+ let el=fn.i3('<div class="abort" onclick="quest.end('abort')" style="position:fixed;z-index:10;top:1rem;right:1rem" >*</div>')
+ fn.a2(el,document.body)
+ q.run( fn.base64url(d,1) )
+ }
 })(quest); 
 </script>
+<script>
+;(function(){
+ //need data-loader data-loaded
+ let re={}
+ re.comments=/([^\\:]|^)\/\/.*$/
+ re.url=/(?:[--:\w?@%&+~#=]*\.[a-z]{2,4}\/{0,2})(?:(?:[?&](?:\w+)=(?:[\w\.]+))+|[--:\w?@%&+~#=]+)?/
+ ;
+ let fn={}
+ fn.q=(d)=>document.querySelector(d)
+ fn.f=(d)=>fetch(d).then(d=>d.text())
+ fn.f2=(d)=>URL.createObjectURL(new Blob( [d], {type:"text\/javascript"} ))
+ ;
+ let da=fn.q('[data-loader]')
+ ,endtext=fn.q('[data-loaded]')?fn.q('[data-loaded]').textContent:''
+ ,run=(d)=>{da.innerHTML='';da.type='text/javascript';da.src=d}
+ ,ary=da.textContent.split('\n')
+  .filter(d=>!re.comments.test(d))
+  .filter(d=>re.url.test(d))
+  .map(d=>d.match(re.url).pop())
+  .filter(d=>d)
+ //console.log(ary)
+ ;
+ Promise.all(ary.map(fn.f))
+  .then(d=>d.join('\n/*****/\n')+endtext)
+  .then(fn.f2)
+  .then(run)
+ ;
+})(this);  
+</script> 
 </body>
 </html>
