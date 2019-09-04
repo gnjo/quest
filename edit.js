@@ -4,6 +4,15 @@ v1.x ...
 v2.0 app.opt add
 v2.1 bugfix
 v2.2 apply the quest
+v2.3 shortcut key
+ esc 27 abort
+ < 188 abort
+ > 190 run it
+ * 186 run the all
+ L 76 lex test
+ ? 191 man
+ - 189 README.md
+ + 187 disp toggle
 */
 let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
 //calc ...
