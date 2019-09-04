@@ -3,6 +3,7 @@ v1.0 make
 v1.x ...
 v2.0 app.opt add
 v2.1 bugfix
+v2.2 apply the quest
 */
 let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
 //calc ...
@@ -69,10 +70,10 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
   
   //editableLex(ed) //cutt
   ed.dataset.headline=ed.textContent.split('\n').slice(0,1).pop()  
-  ed.dataset.lines2=ed.dataset.max
+  //ed.dataset.lines2=ed.dataset.max
   ea(ed,(ev)=>{
    ev.target.dataset.headline=ev.target.textContent.split('\n').slice(0,1).pop()
-   ed.dataset.lines2=ed.dataset.max
+   //ed.dataset.lines2=ed.dataset.max
   },{dt:200})  
   
   //Object.assign(el.dataset,fn.lex(el.textContent))
@@ -119,7 +120,7 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
  total.dataset.lv="0"
  app.totalcalc=()=>{
   let ary=fn.qa('#center .ed[data-type="story"]')
-  total.dataset.total=ary.map(d=>parseInt(d.dataset.lines2,10)).reduce((a,b)=>a+b,0)
+  total.dataset.total=ary.map(d=>parseInt(d.dataset.max/*lines2*/,10)).reduce((a,b)=>a+b,0)
   total.dataset.lv=ary.length  
  }
  ;
