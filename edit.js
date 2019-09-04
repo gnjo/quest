@@ -205,6 +205,9 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
 .frame+.frame {
     margin-top: 1rem;
 }
+.ea:before {
+    color: #456;
+}
 `;
  app.overwrite=()=>{
   fn.a2( fn.i3(`<style class="overwrite">${css}</style>`),document.body)
