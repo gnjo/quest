@@ -71,7 +71,7 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
  total.dataset.lv="0"
  app.totalcalc=()=>{
   let ary=fn.qa('#center .ed[data-type="story"]')
-  total.dataset.total=ary.map(d=>parseInt(d.dataset.lines2,10)).reduce((a,b)=>a+b,0)
+  total.dataset.total=ary.map(d=>parseInt(d.dataset.max,10)).reduce((a,b)=>a+b,0)
   total.dataset.lv=ary.length  
  }
  ;
@@ -192,10 +192,31 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
  }
  ;
 })(app);
+;(function(app){
+ let css=`
+.ed {
+    padding: 0!important;
+    padding-left: 2.5rem!important;
+}
+.ed:after {
+    content: ""!important;
+}
+.frame+.frame {
+    margin-top: 1rem;
+}
+`;
+ app.overwrite=()=>{
+  fn.a2( fn.i3(`<style class="overwrite">${css}</style>`),document.body)
+ }
+ 
+})(app);
+
 //init
 ;(function(app){
 
  app.init=async ()=>{
+  app.overwrite() //customize
+
   await app.searchInit()
   await app.load()
   ;
@@ -241,3 +262,5 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
  app.init()/////////////////////////////////////////////////////////////////////////
  ;  
 })(app);
+
+
