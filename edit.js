@@ -43,8 +43,10 @@ let app=lcr("auto",/*'54rem'*/'44rem',/*'20rem'*/'15rem')
   //editableLex(ed)
   //option.dt=70
   ed.dataset.headline=ed.textContent.split('\n').slice(0,1).pop()  
+  ed.dataset.lines2=ed.dataset.max
   ea(ed,(ev)=>{
    ev.target.dataset.headline=ev.target.textContent.split('\n').slice(0,1).pop()
+   ed.dataset.lines2=ed.dataset.max
   },{dt:200})
   
   
