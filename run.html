@@ -20,30 +20,30 @@ script(src="https://gnjo.github.io/quest/q.core.loo.js?v=1.2")
 </script> 
 <script type="text/plain" data-loaded>
 ;(function(q){ 
-let fn={}
-fn.a2=function(me,p){p.appendChild(me);return me}
-fn.i3=(d)=>{
- if(typeof d !=='string') return d
- var el=document.createElement('table'); el.innerHTML=d.trim();
- var me=el.childNodes[0]
- el=void 0;
- return me
-}
-fn.gp=(key,url)=>{let re=new RegExp('^'+key+'=');return url.split('?').pop().split('&').filter(d=>re.test(d)).join('').split('=').pop()}
-fn.base64url=(str,decodeflg)=>{
-let eu=(str)=>str.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
-,du=(str)=>{str = (str + '===').slice(0, str.length + (str.length % 4));return str.replace(/-/g, '+').replace(/_/g, '/')}
-,d=(str)=>decodeURIComponent(escape(atob(str)))
-,e=(str)=>btoa(unescape(encodeURIComponent(str)))
-return (decodeflg)?d( du(str) ):eu( e(str) )
-}
-;
+ let fn={}
+ fn.a2=function(me,p){p.appendChild(me);return me}
+ fn.i3=(d)=>{
+  if(typeof d !=='string') return d
+  var el=document.createElement('table'); el.innerHTML=d.trim();
+  var me=el.childNodes[0]
+  el=void 0;
+  return me
+ }
+ fn.gp=(key,url)=>{let re=new RegExp('^'+key+'=');return url.split('?').pop().split('&').filter(d=>re.test(d)).join('').split('=').pop()}
+ fn.base64url=(str,decodeflg)=>{
+  let eu=(str)=>str.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
+  ,du=(str)=>{str = (str + '===').slice(0, str.length + (str.length % 4));return str.replace(/-/g, '+').replace(/_/g, '/')}
+  ,d=(str)=>decodeURIComponent(escape(atob(str)))
+  ,e=(str)=>btoa(unescape(encodeURIComponent(str)))
+  return (decodeflg)?d( du(str) ):eu( e(str) )
+ }
+ ;
  let d=fn.gp('d',location.href) 
  if(!d)return
-;
-  let el=fn.i3('<div class="abort" onclick="quest.end('abort')" style="position:fixed;z-index:10;top:1rem;right:1rem" >*</div>')
-  fn.a2(el,document.body)
-  q.run( fn.base64url(d,1) )
+ ;
+ let el=fn.i3(`<div class="abort" onclick="quest.end('abort')" style="position:fixed;z-index:10;top:1rem;right:1rem" >*</div>`)
+ fn.a2(el,document.body)
+ q.run( fn.base64url(d,1) )
 })(quest); 
 </script>
 <script>
