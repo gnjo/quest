@@ -24,6 +24,7 @@ script(src="https://gnjo.github.io/quest/user.js")
 ### group
 ```
 //pug
+//quest.js include the all.
 script(src="https://gnjo.github.io/quest/underscore.js")
 script(src="https://gnjo.github.io/quest/quest.util.js")
 script(src="https://gnjo.github.io/quest/quest.core.js")
