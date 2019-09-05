@@ -2,6 +2,7 @@
 v0.1 isExist
 v0.2 randomSeed
 v0.3 otehr file issue
+v0.4 random cutoff modulo
 */
 
 _.mixin({
@@ -17,30 +18,24 @@ _isExist(0) //exist
 _.mixin({
   randomSeed : function entry(_seed){
  let seed=_seed||999
- ,xorshift32=function xorshift32(seed){
+ ,xorshift32=function xorshift32(){
   let y=seed
   y = y ^ (y << 13)
   y = y ^ (y >> 17)
   y = y ^ (y << 15)
   y = y >>> 0
-  //0 - 1 same format Math.random()
-  y=y%0Xffffffff/0Xffffffff
+  seed=y
   //
   return y
  }
  ,random=(min,max)=>{
-  seed=xorshift32(seed)
-  /*
-  //console.log(a,seed%a)
-  if(_.isExist(a)&&_.isExist(b))return seed%Math.abs(b-a)+a
-  if(_.isExist(a))return seed%a
-  return seed
-  */
+  //0 - 1 same format Math.random()
+  let r=(xorshift32()%0Xffffffff/0Xffffffff) //0 to 1
   if (max == null) {
       max = min;
       min = 0;
     }
-    return min + Math.floor(seed * (max - min + 1));
+    return min + ~~(r * (max - min + 1));
  }
  return random
 }
