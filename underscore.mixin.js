@@ -23,14 +23,24 @@ _.mixin({
   y = y ^ (y >> 17)
   y = y ^ (y << 15)
   y = y >>> 0
+  //0 - 1 same format Math.random()
+  y=y%0Xffffffff/0Xffffffff
+  //
   return y
  }
- ,random=(a,b)=>{
+ ,random=(min,max)=>{
   seed=xorshift32(seed)
+  /*
   //console.log(a,seed%a)
   if(_.isExist(a)&&_.isExist(b))return seed%Math.abs(b-a)+a
   if(_.isExist(a))return seed%a
   return seed
+  */
+  if (max == null) {
+      max = min;
+      min = 0;
+    }
+    return min + Math.floor(seed * (max - min + 1));
  }
  return random
 }
