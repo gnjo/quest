@@ -45,6 +45,23 @@ quest.cmds.js
  q.cmds...
 ```
 
+### develop rule
+```
+Object must call less than 1000 in life.
+Names function must call more than 1,000,000 in life.
+Anoymous function must call less than 1,000,000 in life.
+Debug info input to the "quest.pipe" for Proxy.
+```
+```
+//debug
+let snif={set:(o,p,v)=>{
+ if(p==='pipe')console.log(v,quest.sd['$$$'])
+ return o[p]=v
+}}
+quest=new Proxy(quest,snif)
+
+```
+
 ### usage
 1st command
 ```
