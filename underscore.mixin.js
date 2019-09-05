@@ -40,7 +40,7 @@ _.mixin({
       max = min;
       min = 0;
     }
-    return min + Math.floor(seed * (max - min + 1));
+    return min + ~~(seed * (max - min + 1));
  }
  return random
 }
