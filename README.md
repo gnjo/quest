@@ -48,7 +48,7 @@ quest.cmds.js
 ### develop rule
 ```
 Object must call less than 1000 in life.
-Names function must call more than 1,000,000 in life.
+Names function must call more than 1,000,000 in life, always better choice.
 Anoymous function must call less than 1,000,000 in life.
 Debug info input to the "quest.pipe" for Proxy.
 ```
