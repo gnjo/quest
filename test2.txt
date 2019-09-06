@@ -1,0 +1,48 @@
+@xyz
+
+[[[
+the city,#xyz,city of city
+the inn,#inn,xyzz
+the kkk,,aaaaa
+]]]
+
+SEL $00 X01
+ITM 1 0 $00 //ex. #xyz
+$00?1 $00
+
+[[[
+choice is one.
+are you ready?
+]]]
+YON $00 0 X01
+$00=1 #choice
+$00=0 #choice
+//
+//cancel route
+//
+<<< #choice  
+
+
+
+[[[
+aaa
+bbb
+ccc
+ddd
+eee
+yyy
+]]]
+MES $00 1 X01 //0 is wait-flg
+
+[[[
+episode1,0,this flg is 0
+episode2,0,this flg is 1
+episode3,0,this flg is 2
+episode4,0,this flg is 3
+]]]
+$FG $00
+FLG episode1 1 $FG //set
+FLG episode1 $FG //get
+
+
+
