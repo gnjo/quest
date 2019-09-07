@@ -7,7 +7,7 @@ v1.4 cmd
 */
 //call quest
 ;(function(root){
- root.quest=runner({cmds:{},mans:{}})
+ root.quest=runner({cmds:{},mans:{},pipe:''})
 })(this);
 //clr
 ;(function(q){
