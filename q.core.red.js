@@ -11,6 +11,7 @@
   ,ary=str.match(re.cmdlinesplit)||[] //str.split(' ').slice(1)
   ,cmd=ary[0]
   ;
+  q.pipe=ary;//debug
   //[[[ and {{{ is special command %$xx changeed 
   //wrap case quick return
   if(re.wrapjs.test(str)&&(q.cmds['{{{'])){
