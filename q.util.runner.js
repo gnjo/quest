@@ -2,6 +2,7 @@
 v1.0 make
 v1.1 bugfix object unmapping
 v1.2 bugfix seek null is not run
+v1.3 await possible
 */
 ;(function(root){
 
@@ -21,10 +22,13 @@ v1.2 bugfix seek null is not run
    //.map(d=>d.fn.apply(o,ary))
    return o;   
   }
-  o.run=function(){
+  o.run=async function(){
    let arg=_(arguments).map(d=>d)
    let ary=_.keys(o.__run).map(k=>{return {name:k,seek:o.__run[k],fn:o[k]} })
-    _.sortBy(ary,(a)=>a.seek).map(d=>d.fn.apply(o,arg))
+   ary=_.sortBy(ary,(a)=>a.seek)
+   for(const d of ary){
+    await d.fn.apply(o,arg)
+   }
    return o;
   }
   return o//_.extend({},o,obj)
@@ -37,7 +41,6 @@ let x={}
 ,a=(d)=>{console.log(d,'aaa')}
 ,b=(d)=>{console.log(d,'bbb')}
 ,c=(d)=>{console.log(d,'ccc')}
-
 let r=runner(x)
 r.addon(10,'a',a)
 r.addon(20,'c',c)
