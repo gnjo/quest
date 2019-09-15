@@ -1,6 +1,7 @@
 /*history
 v1.0 make
 v1.1 bugfix 001 issue. if def case, 001 is string.
+v1.2 param add
 */
 ;(function(root){
 
@@ -40,15 +41,58 @@ v1.1 bugfix 001 issue. if def case, 001 is string.
   if(re.num.test(obj))return parseFloat(obj);//right number
   return obj;//string
  }
+ function a(_a){
+  return Math.abs(_a)
+ }
+ function c(_a){
+  return Math.ceil(_a)
+ }
+ function r(_a,_b){
+  return (_b==null)?_.random(0,_a):_.random(_a,_b)
+ }
+ function p(_a){
+  //let v=(~~(Math.random()*100+1)) - (100-parseInt(_a))
+  let v=(_.random(1,100)) - (100-parseInt(_a)) 
+  return (v>0)?1:0
+ }
+ function e(_a){
+  if(!_.isString(_a))return 0
+  let re=/\r\n|\n/g
+  if(!re.test(_a))return 1
+  return _a.match(re).length+1
+ }
+ function l(_a){
+  if(_a==null)return 0
+  return _a.length||0
+ }
+ function o(_a,_b,_c){
+  /*
+$01 0 [[[aa,bb,cc,dd]]] o //replace
+$01 0 1 [[[3]]] o //replace
+$01 0 [[[]]] o //delete
+$01 [[[1]]] o //push
+$01 -1 [[[1]]] o //unshift  
+  */
+ }
  ;
- function entry(obj,ch){
-  if(ch==='b')return b(obj)
-  if(ch==='f')return f(obj)
-  if(ch==='i')return i(obj)  
-  return def(obj)
+ function entry(_a,ch,_b,_c,_d){
+  if(ch==='a')return a(_a)
+  if(ch==='b')return b(_a)  
+  if(ch==='c')return c(_a)
+  if(ch==='i')return i(_a)
+  if(ch==='f')return f(_a)
+  if(ch==='r')return r(_a,_b)
+  if(ch==='p')return p(_a)
+  if(ch==='l')return l(_a) //length
+  if(ch==='e')return e(_a) //end line
+  //if(ch==='o')return o(_a,_b,_c,_d)
+  //if(ch==='j')
+  //if(ch==='t')
+  return def(_a)
  }
  root.numable=entry;
 })(this);
 /*
 numable(obj,ch) //bfi //ch=null is right number change
 */
+
